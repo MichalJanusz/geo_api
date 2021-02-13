@@ -9,7 +9,7 @@ class User(AbstractUser):
 
 
 class GeolocData(models.Model):
-    ip = models.CharField(max_length=64)
+    ip = models.CharField(max_length=64, unique=True)
     ip_type = models.CharField(max_length=4)
     continent_code = models.CharField(max_length=2)
     continent_name = models.CharField(max_length=32)

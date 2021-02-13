@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from my_api.views import GeolocDataList, GeolocDataDetails
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/list', GeolocDataList.as_view()),
+    path('api/<str:ip>/', GeolocDataDetails.as_view())
 ]
