@@ -38,5 +38,7 @@ Refresh JWT token: 'jwt/token/refresh/'
 ## Credentials
 
 The credentials for retrieving JWT token are:
+
 Username: admin
+
 Password: admin
