@@ -28,7 +28,7 @@ The development server should start and the app should be accessible at [localho
 
 List of all stored data: 'api/list/'
 
-Detailed info of one IP: 'api/<ip>/'
+Detailed info of one IP: 'api/_ip_/'
 
 Retrieve JWT token: 'jwt/token/'
 
