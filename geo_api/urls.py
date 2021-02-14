@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from my_api.views import GeolocDataList, GeolocDataDetails
+from rest_framework_simplejwt import views as jwt_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/list', GeolocDataList.as_view()),
-    path('api/<str:ip>/', GeolocDataDetails.as_view())
+    path('api/<str:ip>/', GeolocDataDetails.as_view()),
+    path('jwt/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('jwt/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]

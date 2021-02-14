@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
+
 from my_api.models import GeolocData
 from my_api.serializers import GeolocDataSerializer
 from rest_framework.views import APIView
@@ -11,6 +13,7 @@ import json
 # Create your views here.
 
 class GeolocDataList(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, format=None):
         geo_data = GeolocData.objects.all()
@@ -26,6 +29,7 @@ class GeolocDataList(APIView):
 
 
 class GeolocDataDetails(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get_object(self, ip):
         try:
